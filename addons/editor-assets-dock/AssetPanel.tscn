@@ -1,0 +1,120 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/editor-assets-dock/AssetPanel.gd" type="Script" id=1]
+
+[sub_resource type="Image" id=4]
+data = {
+"data": PoolByteArray( 23, 22, 26, 111, 29, 28, 33, 239, 32, 30, 36, 247, 33, 31, 37, 247, 33, 31, 37, 247, 33, 31, 37, 247, 33, 31, 37, 247, 32, 30, 36, 247, 29, 28, 33, 239, 23, 22, 26, 111, 29, 28, 33, 240, 36, 34, 41, 255, 40, 38, 45, 255, 40, 38, 46, 255, 40, 38, 46, 255, 40, 38, 46, 255, 40, 38, 46, 255, 40, 38, 45, 255, 36, 34, 41, 255, 29, 28, 33, 240, 32, 30, 36, 249, 40, 38, 45, 255, 43, 42, 49, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 43, 42, 49, 255, 40, 38, 45, 255, 32, 30, 36, 249, 33, 31, 37, 247, 40, 38, 46, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 40, 38, 46, 255, 33, 31, 37, 247, 33, 31, 37, 247, 40, 38, 46, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 40, 38, 46, 255, 33, 31, 37, 247, 33, 31, 37, 247, 40, 38, 46, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 40, 38, 46, 255, 33, 31, 37, 247, 33, 31, 37, 247, 40, 38, 46, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 40, 38, 46, 255, 33, 31, 37, 247, 32, 30, 36, 249, 40, 38, 45, 255, 43, 42, 49, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 44, 42, 50, 255, 43, 42, 49, 255, 40, 38, 45, 255, 32, 30, 36, 249, 29, 28, 33, 240, 36, 34, 41, 255, 40, 38, 45, 255, 40, 38, 46, 255, 40, 38, 46, 255, 40, 38, 46, 255, 40, 38, 46, 255, 40, 38, 45, 255, 36, 34, 41, 255, 29, 28, 33, 241, 23, 22, 26, 111, 29, 28, 33, 240, 32, 30, 36, 247, 33, 31, 37, 247, 33, 31, 37, 247, 33, 31, 37, 247, 33, 31, 37, 247, 32, 30, 36, 247, 29, 28, 33, 238, 23, 22, 26, 111 ),
+"format": "RGBA8",
+"height": 10,
+"mipmaps": false,
+"width": 10
+}
+
+[sub_resource type="ImageTexture" id=2]
+flags = 4
+flags = 4
+image = SubResource( 4 )
+size = Vector2( 10, 10 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = SubResource( 2 )
+region_rect = Rect2( 0, 0, 10, 10 )
+margin_left = 4.0
+margin_right = 4.0
+margin_top = 4.0
+margin_bottom = 5.0
+
+[node name="AssetPanel" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleLabel" type="Label" parent="."]
+margin_right = 1024.0
+margin_bottom = 14.0
+text = "Project Assets"
+
+[node name="NameFilter" type="HBoxContainer" parent="."]
+margin_top = 18.0
+margin_right = 1024.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+
+[node name="FilterLabel" type="Label" parent="NameFilter"]
+margin_top = 5.0
+margin_right = 37.0
+margin_bottom = 19.0
+text = "Filter:"
+
+[node name="FilterValue" type="LineEdit" parent="NameFilter"]
+margin_left = 41.0
+margin_right = 1024.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 120, 0 )
+size_flags_horizontal = 3
+
+[node name="Split" type="HSplitContainer" parent="."]
+margin_top = 46.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_vertical = 3
+
+[node name="Toolbar" type="VBoxContainer" parent="Split"]
+margin_right = 240.0
+margin_bottom = 554.0
+rect_min_size = Vector2( 240, 0 )
+
+[node name="AddonsFilter" type="HBoxContainer" parent="Split/Toolbar"]
+margin_right = 240.0
+margin_bottom = 24.0
+
+[node name="FilterCheck" type="CheckBox" parent="Split/Toolbar/AddonsFilter"]
+margin_right = 132.0
+margin_bottom = 24.0
+text = "Include addons?"
+flat = true
+
+[node name="SimilarFilter" type="HBoxContainer" parent="Split/Toolbar"]
+margin_top = 28.0
+margin_right = 240.0
+margin_bottom = 52.0
+
+[node name="FilterCheck" type="CheckBox" parent="Split/Toolbar/SimilarFilter"]
+margin_right = 160.0
+margin_bottom = 24.0
+text = "Group similar types?"
+
+[node name="Content" type="VBoxContainer" parent="Split"]
+margin_left = 252.0
+margin_right = 1024.0
+margin_bottom = 554.0
+custom_constants/separation = 0
+
+[node name="GroupTabs" type="Tabs" parent="Split/Content"]
+margin_right = 772.0
+margin_bottom = 24.0
+tab_align = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Split/Content"]
+margin_top = 24.0
+margin_right = 772.0
+margin_bottom = 554.0
+rect_min_size = Vector2( 0, 200 )
+size_flags_vertical = 3
+custom_styles/bg = SubResource( 3 )
+
+[node name="AssetList" type="GridContainer" parent="Split/Content/ScrollContainer"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 768.0
+margin_bottom = 525.0
+rect_min_size = Vector2( 0, 240 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+columns = 7
